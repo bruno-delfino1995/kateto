@@ -7,7 +7,7 @@ use std::rc::Rc;
 use jrsonnet_evaluator::error::{Error as JrError, LocError};
 use jrsonnet_evaluator::native::{NativeCallback, NativeCallbackHandler};
 use jrsonnet_evaluator::{FuncVal, Val};
-use jrsonnet_gc::{unsafe_empty_trace, Finalize, Gc, Trace};
+use jrsonnet_gc::{Finalize, Gc, Trace, unsafe_empty_trace};
 use jrsonnet_parser::{Param, ParamsDesc};
 use serde_json::Value;
 

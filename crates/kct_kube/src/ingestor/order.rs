@@ -3,6 +3,7 @@ use super::path;
 use crate::error;
 
 use std::cmp::Ordering;
+use std::fmt;
 use std::path::PathBuf;
 
 use anyhow::Result;
@@ -108,15 +109,15 @@ pub struct Track {
 	pub kind: Option<Kind>,
 }
 
-impl ToString for Track {
-	fn to_string(&self) -> String {
+impl fmt::Display for Track {
+	fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
 		let kind = self
 			.kind
 			.clone()
 			.map(|k| k.0)
 			.unwrap_or_else(|| String::from("Kind"));
 
-		format!("{}({}:{}:{})", kind, self.field, self.depth, self.order)
+		writeln!(f, "{}({}:{}:{})", kind, self.field, self.depth, self.order)
 	}
 }
 
@@ -206,7 +207,6 @@ impl TryFrom<&Value> for Order {
 
 		let tracking = annotation
 			.split('/')
-			.into_iter()
 			.filter(|s| !s.is_empty())
 			.map(Track::try_from)
 			.collect::<Result<Vec<Track>, _>>()?;

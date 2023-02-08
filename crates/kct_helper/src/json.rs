@@ -1,4 +1,4 @@
-use serde_json::{json, Map, Value};
+use serde_json::{Map, Value, json};
 
 pub fn merge(left: &mut Value, right: &Value) {
 	match (left, right) {
@@ -95,7 +95,7 @@ fn build_path(path: &[&str], value: Value) -> Value {
 
 #[cfg(test)]
 mod test {
-	use serde_json::{json, Value};
+	use serde_json::{Value, json};
 
 	use super::{get_in, merge, set_in};
 

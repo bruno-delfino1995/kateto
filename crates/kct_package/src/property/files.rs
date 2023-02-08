@@ -3,8 +3,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 use globwalk::{DirEntry, GlobWalkerBuilder};
-use kct_compiler::property::{Callback, Function, Generator, Name, Prop};
 use kct_compiler::Runtime;
+use kct_compiler::property::{Callback, Function, Generator, Name, Prop};
 use serde_json::{Map, Value};
 use tera::{Context, Tera};
 

@@ -1,4 +1,4 @@
-use crate::{error, Error, Release};
+use crate::{Error, Release, error};
 
 use std::path::{Path, PathBuf};
 use std::sync::Arc;

@@ -6,7 +6,7 @@ use kct_compiler::Release;
 use kct_package::{Error, Package};
 use kct_testing::dir::TempDir;
 use kct_testing::{self as testing, Fixture};
-use serde_json::{json, Map, Value};
+use serde_json::{Map, Value, json};
 
 fn package(with: Vec<(&str, &str)>, without: Vec<&str>) -> (Result<Package, Error>, TempDir) {
 	let dir = Fixture::custom(with, without);

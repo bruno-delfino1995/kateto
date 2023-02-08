@@ -3,9 +3,9 @@ use std::path::PathBuf;
 
 use anyhow::Result;
 use assert_matches::assert_matches;
-use kct_kube::{error, Error, Kube, Manifest};
+use kct_kube::{Error, Kube, Manifest, error};
 use kct_testing::compile;
-use serde_json::{json, Value};
+use serde_json::{Value, json};
 
 fn manifest() -> Value {
 	json!({

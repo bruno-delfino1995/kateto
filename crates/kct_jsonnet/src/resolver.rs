@@ -4,8 +4,8 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 use std::rc::Rc;
 
-use jrsonnet_evaluator::error::Error as JrError;
 use jrsonnet_evaluator::ImportResolver;
+use jrsonnet_evaluator::error::Error as JrError;
 use jrsonnet_interner::IStr;
 
 pub struct LibImportResolver {
@@ -124,7 +124,7 @@ impl ImportResolver for AggregatedImportResolver {
 	fn load_file_contents(&self, id: &Path) -> jrsonnet_evaluator::error::Result<IStr> {
 		let error = JrError::ResolvedFileNotFound(id.to_path_buf()).into();
 
-		let is_from_resolver = id.extension().map_or(false, |ext| ext.eq("resolver"));
+		let is_from_resolver = id.extension().is_some_and(|ext| ext.eq("resolver"));
 		if !is_from_resolver {
 			return Err(error);
 		}

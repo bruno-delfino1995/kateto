@@ -12,10 +12,11 @@ doctest = false
 
 [dependencies]
 globwalk = "0.8.0"
-semver = "1.0.17"
-url = "2.1.1"
+semver = "1.0.18"
+url = "2.4.0"
 
 anyhow.workspace = true
+jrsonnet-gcmodule.workspace = true
 kct_compiler.workspace = true
 kct_helper.workspace = true
 serde_json.workspace = true

@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to the KCT wiki!
+Welcome to Kateto's wiki!
 
 Here lives our initial documentation about concepts and how the project works
 
@@ -8,7 +8,7 @@ Here lives our initial documentation about concepts and how the project works
 
 ## About
 
-KCT is a tool for taming the Kubernetes configuration beast by using [Jsonnet](http://jsonnet.org/) while borrowing approaches and concepts from early contestants such as [Tanka](https://helm.sh/) and [Helm](https://helm.sh/).
+Kateto is a tool for taming the Kubernetes configuration beast by using [Jsonnet](http://jsonnet.org/) while borrowing approaches and concepts from early contestants such as [Tanka](https://helm.sh/) and [Helm](https://helm.sh/).
 
 <a name="motivation"></a>
 
@@ -21,8 +21,6 @@ We want to trust the users with context and cluster access, by using their [pref
 <a name="acknowledgments"></a>
 
 ## Acknowledgments
-
-Once this project wouldn't be possible without their parser and evaluator, I owe special thanks to the creators of [jrsonnet](https://github.com/CertainLach/jrsonnet).
 
 Thanks to the ArgoCD project for their post, and thanks to the creators of the reviewed tools. I wouldn't be able to know at which features I should aim without their review and prior approaches.
 

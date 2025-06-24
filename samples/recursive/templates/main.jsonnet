@@ -1,4 +1,4 @@
-local _ = import 'kct.libsonnet';
+local _ = import 'kateto.libsonnet';
 
 if _.input.counter == 0 then
 	_.include('github.com/bruno-delfino1995/plain')

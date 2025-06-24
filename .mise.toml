@@ -1,0 +1,40 @@
+[tools]
+go = "1.24.3"
+
+[tasks.setup]
+description = "Installs tools used around here"
+run = """
+go install -modfile go.tools.mod github.com/golangci/golangci-lint/v2/cmd/golangci-lint
+"""
+
+[tasks.format]
+description = "Ensures consistency througout the codebase"
+run = "go fmt ./..."
+
+[tasks.lint]
+description = "Keeps code smells away from the code"
+run = "golangci-lint run ./..."
+
+[tasks.test]
+description = "Validates the system with automated tests"
+run = "go test -v -race -vet=all -count=1 -coverprofile=coverage.out ./..."
+
+[tasks.try]
+description = "Checks the result of rendering KCPs"
+run = """
+echo -e "\\e[1m\\e[4mRendering plain package\\e[0m\\n"
+go run ./... render samples/plain
+
+echo -e "\\e[1m\\e[4mRendering counter package\\e[0m\\n"
+go run ./... render -s counter=2 samples/counter
+
+# FIXME: it's unable to parse the output after 119
+echo -e "\\e[1m\\e[4mRendering recursive package\\e[0m\\n"
+go run ./... render -s counter=3 samples/recursive
+
+echo -e "\\n\\e[1m\\e[4mRendering with-files package\\e[0m\\n"
+go run ./... render -i samples/with-files/example.json -s 'database.host="not-default"' -s 'database.credentials.user="someone"' samples/with-files
+
+echo -e "\\e[1m\\e[4mRendering with-subpackages package\\e[0m\\n"
+go run ./... render -i samples/with-subpackages/example.json samples/with-subpackages
+"""

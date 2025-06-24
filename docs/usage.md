@@ -1,6 +1,6 @@
 # Usage
 
-KCT consists of a CLI which acts upon a specific directory structure named [Kubernetes Configuration Package][kcp]. Here we describe the commands in depth, but remember that there's always `--help` there for you. If you're looking for what you can use within your package, check out the [package documentation][kcp]
+Kateto consists of a CLI which acts upon a specific directory structure named [Kubernetes Configuration Package][kcp]. Here we describe the commands in depth, but remember that there's always `--help` there for you. If you're looking for what you can use within your package, check out the [package documentation][kcp]
 
 <a name="compile"></a>
 
@@ -14,16 +14,16 @@ The compilation lives at the core because it's how a package becomes a set of re
 
 ```bash
 # install
-kct render kcp -f values.json | kubectl apply -f -
+kateto render kcp -f values.json | kubectl apply -f -
 
 # uninstall
-kct render kcp -f values.json | kubectl delete -f -
+kateto render kcp -f values.json | kubectl delete -f -
 ```
 
 Another use of the render command is to help you see the diffs between the objects you created by writing them down at a directory of your choice with the `--output|-o` option. For this reason we also officially support a `examples.json` file to showcase you package's input, which could also double as a default input for your diffing needs.
 
 ```bash
-kct render kcp -f kcp/example.json -o kcp/rendered
+kateto render kcp -f kcp/example.json -o kcp/rendered
 ```
 
 To make easier to spot changes, we'll use your package layout to determine which paths to put the files in. If your package has a manifest at `grafana.deployment`, that same manifest will be written at `kcp/rendered/granafa/deployment.yml`.
@@ -34,10 +34,10 @@ We also have our own apply and delete commands that use `kube-rs` to help us int
 
 ```bash
 # place your objects in the cluster
-kct apply kcp -f values.json
+kateto apply kcp -f values.json
 
 # remove your objects from the cluster
-kct apply kcp -f values.json
+kateto apply kcp -f values.json
 ```
 
 [k8s-objects]: https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/

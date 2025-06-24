@@ -4,7 +4,7 @@
 		{
 			"source": {
 				"git": {
-					"remote": "https://github.com/bruno-delfino1995/kct.git",
+					"remote": "https://github.com/bruno-delfino1995/kateto.git",
 					"subdir": "libsonnet"
 				}
 			},

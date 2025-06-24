@@ -1,4 +1,4 @@
-local _ = import 'kct.libsonnet';
+local _ = import 'kateto.libsonnet';
 
 {
 	apiVersion: 'v1',

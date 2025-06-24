@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local _ = import "kct.libsonnet";
+local _ = import "kateto.libsonnet";
 local k = import "github.com/grafana/jsonnet-libs/ksonnet-util/kausal.libsonnet";
 
 {

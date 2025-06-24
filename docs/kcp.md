@@ -1,6 +1,6 @@
 # Kubernetes Configuration Package (KCP)
 
-The package structure defined by KCT to build your K8s objects.
+The package structure defined by Kateto to build your K8s objects.
 
 <a name="structure"></a>
 
@@ -164,4 +164,4 @@ Where the "deliverables" get hidden behind K8s concepts, difficulting extension 
 [k8s-objects]: https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
 [k8s-required-fields]: https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields
 [k8s-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
-[example-kcp]: https://github.com/kseat/kct/tree/master/crates/kct_package/tests/fixtures/kcp
+[example-kcp]: https://github.com/kseat/kateto/tree/master/samples/plain

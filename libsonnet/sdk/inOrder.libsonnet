@@ -1,4 +1,4 @@
-local annotation = 'kct.io/order';
+local annotation = 'kateto.io/order';
 
 local recursive(when, what, who, depth = 0) =
 	if when(who) then

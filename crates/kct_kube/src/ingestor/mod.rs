@@ -1,8 +1,8 @@
 mod order;
 mod path;
 
-use crate::error::{self, Root as Error};
 use crate::Manifest;
+use crate::error::{self, Root as Error};
 
 use self::order::{Kind, Order, Track, Tracking};
 

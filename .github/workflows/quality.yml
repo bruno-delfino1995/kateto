@@ -23,7 +23,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: 1.89.0
           override: true
           components: llvm-tools
 
@@ -84,9 +84,9 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: 1.89.0
           override: true
-          components: rustfmt, clippy
+          components: rustfmt,clippy
 
       - name: Configure cache
         uses: ./.github/actions/cache

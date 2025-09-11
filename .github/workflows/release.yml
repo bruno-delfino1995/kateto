@@ -81,8 +81,9 @@ jobs:
         with:
           target: ${{ matrix.target }}
           profile: minimal
-          toolchain: stable
+          toolchain: 1.89.0
           override: true
+          components: llvm-tools
 
       - name: Configure cache
         uses: ./.github/actions/cache

@@ -1,5 +1,5 @@
-use crate::property::{Name, Prop};
 use crate::Input;
+use crate::property::{Name, Prop};
 
 impl From<&Input> for Prop {
 	fn from(val: &Input) -> Self {

@@ -1,5 +1,5 @@
-use crate::property::{Name, Prop};
 use crate::Release;
+use crate::property::{Name, Prop};
 
 use std::convert::From;
 

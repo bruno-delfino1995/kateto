@@ -1,7 +1,5 @@
 use crate::{Manifest, Tracked};
 
-pub use crate::error::Root as Error;
-
 use std::time::Duration;
 
 use anyhow::Result;
@@ -9,11 +7,11 @@ use async_trait::async_trait;
 use either::Either;
 use futures::TryFutureExt;
 use k8s_openapi::apiextensions_apiserver::pkg::apis::apiextensions::v1::CustomResourceDefinition as CRD;
+use kube::Client as K8s;
 use kube::api::{Api, DynamicObject as Dynamic, Patch, PatchParams, ResourceExt};
 use kube::core::GroupVersionKind;
 use kube::discovery::{Discovery, Scope};
 use kube::runtime::wait::{await_condition, conditions};
-use kube::Client as K8s;
 
 pub struct Client {
 	internal: K8s,
